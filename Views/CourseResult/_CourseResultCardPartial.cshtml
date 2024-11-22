@@ -1,0 +1,18 @@
+﻿@model CourseResult
+
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">Grade ID @Model.Id/@Model.Trainee.Id/@Model.Course.Id </h5>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Degree     : @Model.Degree</li>
+        <li class="list-group-item">Trainee    : @Model.Trainee.Name</li>
+        <li class="list-group-item">Course     : @Model.Course.Name</li>
+    </ul>
+    <div class="card-body">
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary btn-sm">Edit</a>
+        <a asp-action="Details" asp-route-id="@Model.Id" class="btn btn-primary btn-sm">Details</a>
+        <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-primary btn-sm">Delete</a>
+
+    </div>
+</div>

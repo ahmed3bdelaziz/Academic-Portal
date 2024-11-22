@@ -1,0 +1,67 @@
+﻿@{
+    Layout = "~/Views/Shared/_CustomLayout.cshtml";
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container text-center mt-5">
+    <h1 class="display-4 mb-4" style="color: #333; font-weight: bold; text-shadow: 1px 1px 5px rgba(0,0,0,0.2);">Welcome to the Academic Portal</h1>
+    <p class="lead" style="font-size: 1.25rem; color: #666;">A comprehensive platform to manage courses, instructors, and departments.</p>
+    
+    <div class="row mt-5">
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm h-100 border-0" style="transition: transform 0.3s; cursor: pointer;">
+                <div class="card-body">
+                    <i class="fa-solid fa-chalkboard-teacher fa-3x mb-3" style="color: #4CAF50;"></i>
+                    <h3 class="card-title">Manage Instructors</h3>
+                    <p class="card-text">Effortlessly manage instructor profiles, schedules, and contact information.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm h-100 border-0" style="transition: transform 0.3s; cursor: pointer;">
+                <div class="card-body">
+                    <i class="fa-solid fa-building-columns fa-3x mb-3" style="color: #FF5722;"></i>
+                    <h3 class="card-title">Organize Departments</h3>
+                    <p class="card-text">Keep track of departments, assign managers, and maintain department records.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Course Management Section -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm h-100 border-0" style="transition: transform 0.3s; cursor: pointer;">
+                <div class="card-body">
+                    <i class="fa-solid fa-book fa-3x mb-3" style="color: #3F51B5;"></i>
+                    <h3 class="card-title">Course Management</h3>
+                    <p class="card-text">Easily add, update, and manage course offerings and student enrollments.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-body {
+        transition: background-color 0.3s;
+    }
+
+    .card:hover .card-body {
+        background-color: #f9f9f9;
+    }
+
+    .fa-solid {
+        transition: color 0.3s;
+    }
+
+    .card:hover .fa-solid {
+        color: #FFC107;
+    }
+</style>

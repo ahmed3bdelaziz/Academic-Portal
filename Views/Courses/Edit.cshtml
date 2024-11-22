@@ -1,0 +1,43 @@
+﻿@model CourseEditViewModel
+
+@{
+    ViewData["Title"] = "Edit Course";
+}
+
+<h1>Edit Course</h1>
+
+<form method="post" asp-action="SaveEdit">
+    <input type="hidden" asp-for="Id" />
+
+    <div>
+        <label asp-for="Name">Course Name</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="MaximumDegree">Maximum Degree</label>
+        <input asp-for="MaximumDegree" type="number" step="0.01" class="form-control" />
+        <span asp-validation-for="MaximumDegree" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="MinimumDegree">Minimum Degree</label>
+        <input asp-for="MinimumDegree" type="number" step="0.01" class="form-control" />
+        <span asp-validation-for="MinimumDegree" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="InstructorId">Instructor</label>
+        <select asp-for="InstructorId" asp-items="@(new SelectList(Model.Instructors, "Id", "Name"))" class="form-control">
+            <option value="">-- Select Instructor --</option>
+        </select>
+        <span asp-validation-for="InstructorId" class="text-danger"></span>
+    </div>
+
+    <div>
+        <input type="submit" value="Save" class="btn btn-primary" />
+    </div>
+</form>
+
+<a asp-action="Index">Back to List</a>

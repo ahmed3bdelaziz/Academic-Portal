@@ -1,0 +1,14 @@
+﻿@model List<CourseResult>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Courses Result List</h1>
+<a asp-action="Add" class="btn btn-primary mb-3">Add New Course Result</a>
+<div class="d-flex flex-wrap gap-3">
+    @foreach (var item in Model)
+    {
+        <partial name="_CourseResultCardPartial" model="item" />
+    }
+</div>

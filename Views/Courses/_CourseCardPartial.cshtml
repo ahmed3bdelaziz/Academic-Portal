@@ -1,0 +1,18 @@
+﻿@model Course
+
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Name</h5>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Maximum Degree  : @Model.MaximumDegree</li>
+        <li class="list-group-item">Minimum Degree  : @Model.MinimumDegree</li>
+        <li class="list-group-item">Instructor      : @Model.Instructor.Name</li>
+    </ul>
+    <div class="card-body">
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary btn-sm">Edit</a>
+        <a asp-action="Details" asp-route-id="@Model.Id" class="btn btn-primary btn-sm">Details</a>
+        <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-primary btn-sm">Delete</a>
+
+    </div>
+</div>

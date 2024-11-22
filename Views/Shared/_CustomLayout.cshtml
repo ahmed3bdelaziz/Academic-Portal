@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@ViewData["Title"] - University Portal</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+	<link rel="stylesheet" href="~/Task7.styles.css" asp-append-version="true" />
+	<style>
+		/* Navbar styling */
+		.navbar {
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		}
+		.navbar-brand i {
+			color: #4CAF50; /* Green color for icon */
+		}
+		.navbar-nav .nav-link {
+			font-weight: 600;
+			transition: color 0.3s;
+		}
+		.navbar-nav .nav-link:hover {
+			color: #4CAF50; /* Hover effect on links */
+		}
+
+		/* Main container */
+		.container {
+			margin-top: 20px;
+			padding: 20px;
+		}
+
+		/* Footer styling */
+		footer {
+			background-color: #f8f9fa;
+			padding: 20px 0;
+			margin-top: 30px;
+		}
+		footer a {
+			text-decoration: none;
+			color: #6c757d;
+			font-weight: 500;
+		}
+		footer a:hover {
+			color: #000;
+		}
+		footer .social-icons i {
+			font-size: 18px;
+			color: #6c757d;
+			margin-right: 15px;
+			transition: color 0.3s;
+		}
+		footer .social-icons i:hover {
+			color: #4CAF50;
+		}
+
+		/* Add subtle animations */
+		.fade-in {
+			opacity: 0;
+			animation: fadeIn 1s forwards;
+		}
+
+		@@keyframes fadeIn {
+			0% { opacity: 0; }
+			100% { opacity: 1; }
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+			<a class="navbar-brand d-flex align-items-center" asp-controller="Home" asp-action="Index">
+				<i class="fa-solid fa-building-columns" style="font-size: 30px;"></i>
+				<span class="ms-2">Academic Portal</span>
+			</a>
+
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav ms-auto">
+					<li class="nav-item active">
+						<a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" asp-controller="Trainees" asp-action="Index">Trainees</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" asp-controller="Instructors" asp-action="Index">Instructors</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" asp-controller="Departments" asp-action="Index">Departments</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" asp-controller="Courses" asp-action="Index">Courses</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" asp-controller="CourseResult" asp-action="Index">Results</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+
+	<div class="container fade-in">
+		<main role="main" class="pb-3">
+			@RenderBody()
+		</main>
+	</div>
+
+	<footer class="border-top footer text-muted text-center">
+		<div class="container">
+			<div class="d-flex justify-content-center social-icons">
+				<a href="#"><i class="fab fa-facebook-f"></i></a>
+				<a href="#"><i class="fab fa-twitter"></i></a>
+				<a href="#"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<p class="mt-3">&copy; 2024 - Task7 - <a asp-controller="Home" asp-action="Privacy">Privacy</a></p>
+		</div>
+	</footer>
+
+	<!-- Script references -->
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+	<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+	<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="~/js/site.js" asp-append-version="true"></script>
+
+	@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

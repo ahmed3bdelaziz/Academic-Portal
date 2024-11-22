@@ -1,0 +1,30 @@
+﻿@model Instructor
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Instructor Details</h1>
+
+
+<partial name="_InstructorCardPartial" model="Model" />
+
+
+<h2>List Of Courses</h2>
+@if (Model.Courses != null && Model.Courses.Any())
+{
+    <ul class="list-group">
+        @foreach (var course in Model.Courses)
+        {
+            <li class="list-group-item">@course.Name</li>
+        }
+    </ul>
+}
+else
+{
+    <p>This instructor is not currently assigned to any courses.</p>
+}
+
+<div class="card-body">
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,27 @@
+﻿@model Task7.Models.Trainee
+
+
+<partial name="_TraineeCardPartial" model="Model" />
+
+<h2>List of Course Results</h2>
+
+@if (Model.CourseResults != null && Model.CourseResults.Any())
+{
+    <ul class="list-group">
+        @foreach (var item in Model.CourseResults)
+        {
+            <li class="list-group-item">
+                <strong>Course:</strong> @item.Course.Name<br />
+                <strong>Degree:</strong> @item.Degree
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p>This trainee is not currently assigned to any courses.</p>
+}
+
+<div class="card-body">
+    <a asp-action="Index" class="btn btn-secondary btn-sm">Back to List</a>
+</div>

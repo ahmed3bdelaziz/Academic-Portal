@@ -1,0 +1,39 @@
+﻿@model Task7.ViewModel.CourseResultViewModel
+
+@{
+    ViewData["Title"] = "Edit Course Result";
+}
+
+<h1>Edit Course Result</h1>
+
+<form method="post" action="/CourseResult/SaveEdit">
+    <div>
+        <label asp-for="Degree"></label>
+        <input asp-for="Degree" class="form-control" />
+        <span asp-validation-for="Degree" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="CourseId"></label>
+        <select asp-for="CourseId" asp-items="@(new SelectList(Model.Courses, "Id", "Name"))" class="form-control">
+            <option value="">-- Select Course --</option>
+        </select>
+        <span asp-validation-for="CourseId" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="TraineeId"></label>
+        <select asp-for="TraineeId" asp-items="@(new SelectList(Model.Trainees, "Id", "Name"))" class="form-control">
+            <option value="">-- Select Trainee --</option>
+        </select>
+        <span asp-validation-for="TraineeId" class="text-danger"></span>
+    </div>
+
+    <input type="hidden" asp-for="Id" />
+
+    <div>
+        <input type="submit" value="Save" class="btn btn-primary" />
+    </div>
+</form>
+
+<a asp-action="Index">Back to List</a>

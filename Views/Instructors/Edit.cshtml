@@ -1,0 +1,49 @@
+﻿@model InstructorWithDept
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit Instructor</h1>
+
+<form method="post" asp-action="SaveEdit">
+    <input type="hidden" asp-for="Id" />
+
+    <div>
+        <label asp-for="Name">Name</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="Address">Address</label>
+        <input asp-for="Address" class="form-control" />
+        <span asp-validation-for="Address" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="Img">Image URL</label>
+        <input asp-for="Img" class="form-control" />
+        <span asp-validation-for="Img" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="Salary">Salary</label>
+        <input asp-for="Salary" type="number" step="0.01" class="form-control" />
+        <span asp-validation-for="Salary" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="DepartmentId">Department</label>
+        <select asp-for="DepartmentId" asp-items="@(new SelectList(Model.DepartmentList, "Id", "Name"))" class="form-control">
+            <option value="">-- Select Department --</option>
+        </select>
+        <span asp-validation-for="DepartmentId" class="text-danger"></span>
+    </div>
+
+    <div>
+        <input type="submit" value="Save" class="btn btn-primary" />
+    </div>
+</form>
+
+<a asp-action="Index">Back to List</a>

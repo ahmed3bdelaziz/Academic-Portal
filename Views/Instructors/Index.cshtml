@@ -1,0 +1,16 @@
+﻿@model List<Instructor>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Instructors List</h1>
+<a asp-action="Add" class="btn btn-primary mb-3">Add New Instructor</a>
+<div class="d-flex flex-wrap gap-3">
+    @foreach (var item in Model)
+    {
+        <partial name="_InstructorCardPartial" model="item" />       
+    }
+</div>
+
+

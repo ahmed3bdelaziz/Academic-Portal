@@ -1,0 +1,22 @@
+﻿@model Department
+
+<div class="card mb-3">
+    <div class="card-header">
+        <h5>@Model.Name</h5>
+    </div>
+    <div class="card-body">
+        <p><strong>Manager:</strong> @Model.ManagerName</p>
+        <p><strong>Instructors:</strong></p>
+        <ul>
+            @foreach (var instructor in Model.Instructors)
+            {
+                <li>@instructor.Name</li>
+            }
+        </ul>
+    </div>
+    <div class="card-footer text-end">
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary btn-sm">Edit</a>
+        <a asp-action="Details" asp-route-id="@Model.Id" class="btn btn-primary btn-sm">Details</a>
+        <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-primary btn-sm">Delete</a>
+    </div>
+</div>
